@@ -56,7 +56,7 @@ def search_transactions():
         max_amount = float(request.form["max_amount"])
         filtered_transactions = []
         for transaction in transactions:
-            if transaction["amount"] > min_amount and transaction["amount"] < max_amount:
+            if transaction["amount"] >= min_amount and transaction["amount"] <= max_amount:
                 filtered_transactions.append(transaction)
         return render_template("filtered_transactions.html", transactions = filtered_transactions)
     return render_template("search.html")
