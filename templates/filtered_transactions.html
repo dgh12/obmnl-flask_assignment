@@ -49,7 +49,6 @@
                 <tr>
                     <th>Date</th>
                     <th>Amount</th>
-                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -57,25 +56,13 @@
                 <tr>
                     <td>{{ transaction.date }}</td>
                     <td>{{ transaction.amount }}</td>
-                    <td class="transaction-actions">
-                        <a class="btn btn-sm btn-primary" href="{{ url_for('edit_transaction', transaction_id=transaction.id) }}">Edit</a>
-                        <a class="btn btn-sm btn-danger" href="{{ url_for('delete_transaction', transaction_id=transaction.id) }}">Delete</a>
-                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
 
         <div class="d-flex justify-content-center">
-            <a class="btn btn-success" href="{{ url_for('add_transaction') }}">Add Transaction</a>
-        </div>
-        <br>
-        <div class="d-flex justify-content-center">
-            <a class="btn btn-success" href="{{url_for('search_transactions')}}">Search Transations<a>
-        </div>
-        <br>
-        <div class="d-flex justify-content-center">
-            <a class="btn btn-success" href="{{url_for('total_balance')}}">Calculate Total Balance<a>
+            <a class="btn btn-info" href="{{ url_for('get_transactions') }}">Go Back</a>
         </div>
     </div>
 </body>
